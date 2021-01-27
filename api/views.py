@@ -19,7 +19,7 @@ class PlaceAppointMent(APIView):
                 doc_profile.appointment_set.get()
             except exceptions.ObjectDoesNotExist:
                 patient_profile = get_object_or_404(PatientProfile, pk=appointment_pk)
-                patient_profile.date = date
+                patient_profile.appointment = date
                 patient_profile.save()
                 return Response({'detail': 'appointment has been successfully scheduled'}, status=status.HTTP_201_CREATED)
             return Response({'detail': 'an appointment cannot be scheduled at this date'}, status=status.HTTP_400_BAD_REQUEST)
