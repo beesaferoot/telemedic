@@ -5,8 +5,14 @@ import sys
 
 
 def main():
-    """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings')
+    env = os.environ.get("DJANGO_APP_ENV")
+    if  env is not None:
+        if 'dev' in env.lower():
+            os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.config.dev')
+        else:
+            os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.config.production')
+    else:
+        raise Exception('DJANGO_APP_ENV environment variable not set')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
