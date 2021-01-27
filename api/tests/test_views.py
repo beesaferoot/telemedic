@@ -8,9 +8,18 @@ class APIViewsTestCase(APITestCase):
 
     fixtures = ["user.json", "patient.json", "doctor.json"]
     
+    def test_book_appointment_with_past_dates(self):
+        payload = {
+            "appointment_date": date(2020, 2, 7).strftime("%Y-%m-%d"),
+            "doc_id": 1 
+        } 
+        res = self.client.post("/api/create_appointment/1/", data=payload, format="json")
+        self.assertEqual(res.status_code, 400)
+        self.assertContains(res, "an appointment cannot be scheduled at this date", status_code=400)
+
     def test_book_appointment_with_available_date(self):
         payload = {
-            "appointment_date": date(2021, 2, 7).strftime("%y-%m-%d"),
+            "appointment_date": date(2021, 2, 7).strftime("%Y-%m-%d"),
             "doc_id": 1 
         } 
         res = self.client.post("/api/create_appointment/1/", data=payload, format="json")

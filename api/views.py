@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.core import exceptions
+from datetime import date as dt, datetime
 from django.utils import datetime_safe
 from rest_framework import status
 from rest_framework.views import APIView
@@ -15,8 +16,11 @@ class PlaceAppointMent(APIView):
             date = data["appointment_date"]
             id = data["doc_id"]
             doc_profile = get_object_or_404(DoctorProfile, pk=id)
+            # validate for dates from the past 
+            if datetime.strptime(date, "%Y-%m-%d").date() < dt.today():
+                return Response({'detail': 'an appointment cannot be scheduled at this date'}, status=status.HTTP_400_BAD_REQUEST)
             try:
-                doc_profile.appointment_set.get()
+                doc_profile.appointment_set.get(date=date)
             except exceptions.ObjectDoesNotExist:
                 patient_profile = get_object_or_404(PatientProfile, pk=appointment_pk)
                 patient_profile.appointment = date
