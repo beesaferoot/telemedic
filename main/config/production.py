@@ -42,7 +42,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
-ROOT_URLCONF = 'mcqs.urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
