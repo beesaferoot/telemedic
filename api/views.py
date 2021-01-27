@@ -42,6 +42,9 @@ class BlockAppointMentDate(APIView):
         try:
             data = json.loads(req.body)
             date = data["cancel_date"]
+            if datetime.strptime(date, "%Y-%m-%d").date() < dt.today():
+                return Response({'detail': 'please provide a valid date'}, status=status.HTTP_400_BAD_REQUEST)
+
             doc_profile = get_object_or_404(DoctorProfile, pk=doc_pk)
             doc_profile.appointment_set.create(date=date)
             return Response({'detail': 'date has be successfully blocked for future appoinments'}, status=status.HTTP_200_OK)
