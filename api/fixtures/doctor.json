@@ -1,0 +1,9 @@
+[
+{
+    "model": "api.doctorprofile",
+    "pk": 1,
+    "fields": {
+        "user": 1
+    }
+}
+]

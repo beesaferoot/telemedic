@@ -1,0 +1,10 @@
+[
+{
+    "model": "api.patientprofile",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "appointment": null
+    }
+}
+]

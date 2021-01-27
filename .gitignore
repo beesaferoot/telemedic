@@ -1,0 +1,4 @@
+#ignore files for django project
+*.pyc
+__pycache__
+.vscode/

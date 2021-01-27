@@ -1,0 +1,62 @@
+[
+{
+    "model": "api.user",
+    "pk": 1,
+    "fields": {
+        "created_at": "2021-01-26T15:55:04.668Z",
+        "password": "pbkdf2_sha256$216000$x7NOf2hy69NW$uii97Ay35jtlMn62xpAe8Vxwwnc8c0YfN5EFZ6UkfxM=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-01-26T15:55:04.425Z",
+        "first_name": "hike",
+        "last_name": "nike",
+        "email": "hikenike@gmail.com",
+        "updated_at": "2021-01-26T15:55:04.668Z",
+        "user_type": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "api.user",
+    "pk": 2,
+    "fields": {
+        "created_at": "2021-01-26T15:55:25.906Z",
+        "password": "pbkdf2_sha256$216000$fuMBmuFet2LM$6VR+wkvLILHa8EgBTjFYVxYvCkVOkxAE1tUAor8LRhw=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-01-26T15:55:25.662Z",
+        "first_name": "Obinna",
+        "last_name": "Ikeh",
+        "email": "obinna-ikeh@gmail.com",
+        "updated_at": "2021-01-26T15:55:25.906Z",
+        "user_type": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "api.user",
+    "pk": 3,
+    "fields": {
+        "created_at": "2021-01-26T16:31:33.766Z",
+        "password": "pbkdf2_sha256$216000$a6AQcsL4LPhg$s2eth0p4MfrS6A6hzFVGhOJ/UNeLF+r2mFJKIMqP6As=",
+        "last_login": null,
+        "is_superuser": true,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-01-26T15:59:16.142Z",
+        "first_name": "beesafe",
+        "last_name": "sudo",
+        "email": "beesafe@gmail.com",
+        "updated_at": "2021-01-26T15:59:16.405Z",
+        "user_type": "",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
